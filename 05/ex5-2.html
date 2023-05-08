@@ -15,9 +15,9 @@
             doInsert();
         }
 
-        function button2Pressed() {
-            doSelect();
-        }
+        $().ready(function () {
+            doSelect()
+        });
 
         async function doInsert() {
             var userid = document.getElementById('tf1').value;
@@ -57,8 +57,6 @@
     <br>
     tweet:<input id="tf2" type="textfield">
     <button onclick="button1Pressed()">tweet</button>
-    <br>
-    <button onclick="button2Pressed()">X</button>
     <p id="result"></p>
 </body>
 
