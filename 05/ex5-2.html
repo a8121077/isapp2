@@ -19,6 +19,11 @@
             doSelect()
         });
 
+        $().ready(function () {
+            x = 0;
+            setInterval(doCount, 1000);
+        });
+
         async function doInsert() {
             var userid = document.getElementById('tf1').value;
             var tweet = document.getElementById('tf2').value;
@@ -45,7 +50,10 @@
             document.getElementById('result').innerHTML = html;
         }
 
-
+        async function doCount() {
+            x++;
+            doSelect();
+        }
     </script>
 
 </head>
