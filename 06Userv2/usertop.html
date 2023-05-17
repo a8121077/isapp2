@@ -14,8 +14,12 @@
             init()
         })
         function init() {
+            var html = '';
             var name = sessionStorage.getItem('username');
-            document.getElementById('welcome').innerHTML = 'ようこそ' + name + 'さん';
+            html = 'ようこそ' + name + 'さん';
+            var id = sessionStorage.getItem('userid');
+            html = html + '<a href="update.html?userid=' + id + '" > 変更</a >'
+            document.getElementById('welcome').innerHTML = html
         }
     </script>
 
