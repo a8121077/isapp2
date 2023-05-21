@@ -21,18 +21,22 @@
             document.getElementById('tf1').value = ''
         }
 
+        function ButtonPress2() {
+        }
+
         async function execSelect() {
             var sql = 'select * from Users';
             var objects = await osql.connect(sql);
             console.log(objects);
             var html = '';
-            html = html + '<table border="1">';
+            html = html + '<table border="1" id="table1">';
             for (var i = 0; i < objects.length; i++) {
                 html = html + '<tr>';
                 var object = objects[i];
                 html = html + '<td>' + object.id + '</td>';
                 html = html + '<td>' + object.name + '</td>';
                 html = html + '<td>' + '<a href="update.html?userid=' + object.id + '">変更</a>' + '</td>';
+                html = html + '<td>' + '<button onclick="ButtonPress2()" id=' + i + '>削除</button>'
                 html = html + '</tr>';
             }
             html = html + '</table>';
